@@ -8,6 +8,13 @@
 #ifndef _NAMES_H
 #define _NAMES_H
 
+#include <stdint.h>
+#include <stddef.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* ---------------------------------------------------------------------- */
 
 extern const char *names_vendor(uint16_t vendorid);
@@ -31,9 +38,16 @@ extern int get_vendor_string(char *buf, size_t size, uint16_t vid);
 extern int get_product_string(char *buf, size_t size, uint16_t vid, uint16_t pid);
 extern int get_class_string(char *buf, size_t size, uint8_t cls);
 extern int get_subclass_string(char *buf, size_t size, uint8_t cls, uint8_t subcls);
+extern int get_protocol_string(char *buf, size_t size, uint8_t cls, uint8_t subcls,
+                               uint8_t protocolid);
 
 extern int names_init(void);
 extern void names_exit(void);
 
 /* ---------------------------------------------------------------------- */
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif /* _NAMES_H */

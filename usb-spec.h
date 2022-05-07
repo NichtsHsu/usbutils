@@ -8,6 +8,10 @@
 #ifndef _USB_SPEC_H
 #define _USB_SPEC_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* ---------------------------------------------------------------------- */
 
 struct audioterminal {
@@ -1597,4 +1601,9 @@ static struct genericstrtable countrycodes[] =
 };
 
 /* ---------------------------------------------------------------------- */
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif /* _USB_SPEC_H */

@@ -232,6 +232,19 @@ int get_subclass_string(char *buf, size_t size, uint8_t cls, uint8_t subcls)
 	return snprintf(buf, size, "%s", cp);
 }
 
+extern int get_protocol_string(char *buf, size_t size, uint8_t cls, uint8_t subcls,
+                               uint8_t protocolid)
+{
+    const char *cp;
+
+    if (size < 1)
+        return 0;
+    *buf = 0;
+    if (!(cp = names_protocol(cls, subcls, protocolid)))
+        return 0;
+    return snprintf(buf, size, "%s", cp);
+}
+
 /* ---------------------------------------------------------------------- */
 
 static int hash_audioterminal(struct audioterminal *at)
